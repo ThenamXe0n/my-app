@@ -4,6 +4,7 @@ import img1 from "./img.jpg"
 // jsx(javascript and xml)
 function App() {
     let studentName = "hi"
+    console.log(studentName)
   return (
     <div>
       <UserProfile  course={studentName} institute={"mindcoders"}  email="pranav@gmail.com" profileImg={img1} contact="9879789987" />
