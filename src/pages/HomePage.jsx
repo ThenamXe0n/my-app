@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
+  const [recipies, setRecipies] = useState([]);
+  async function getImagesFromApi() {
+    const getData = await fetch("https://dummyjson.com/recipes");
+    const data = await getData.json();
+    setRecipies(data.recipes); // promise ---pending
+  }
+
+
+  useEffect(()=>{
+
+    getImagesFromApi();
+  },[])
+
   return (
     <>
-      <NavBar nav3="contact us" />
       <main className="my-10">
         <h1 className="font-bold text-4xl text-center">
           This website is a documentation for react js
@@ -22,7 +34,15 @@ const HomePage = () => {
           of individual developers and companies.
         </p>
       </main>
-      <Footer />
+      <section>
+        <h1 className="text-4xl text-center font-bold">Dishes photos</h1>
+        {/* ---------image container------------------ */}
+        <div className="grid grid-cols-4">
+          {recipies.map((item) => (
+            <Card img={item.image} title={item.name} />
+          ))}
+        </div>
+      </section>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import logoImg from "../assets/logo.png";
+import { Link } from "react-router";
 
 const NavBar = ({
   children,
@@ -15,9 +16,9 @@ const NavBar = ({
       <header className="header">
         <img id="logo" src={logo} alt="logo" />
         <nav className="navContainer">
-          <a href="/"><h4>{nav1}</h4></a>
+          <Link to="/"><h4>{nav1}</h4></Link>
           <h4>{nav2}</h4>
-          <a href="/contact"><h4>{nav3}</h4></a>
+          <Link to="/contact"><h4>{nav3}</h4></Link>
           <h4>{nav4}</h4>
         </nav>
       </header>
