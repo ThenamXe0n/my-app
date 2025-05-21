@@ -1,5 +1,6 @@
 import "./App.css";
 import ListSection from "./components/ListSection";
+import Counter from "./hooks/useState/Counter";
 import DashboardLayout from "./layout/DashboardLayout";
 import Layout from "./layout/Layout";
 import AboutUsPage from "./pages/AboutUsPage";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/list" element={<ListSection/>} />
+        <Route path="/test" element={<Counter/>} />
         <Route
           path="*"
           element={
